@@ -52,8 +52,6 @@ storm_data$DAMAGE <- storm_data$PROPDMG + storm_data$CROPDMG
 # Calculate total injuries & fatalities
 storm_data$HEALTH <- storm_data$INJURIES + storm_data$FATALITIES
 ```
-
-## Results
 ### Impact on Population health
 Across the United States, which types of events (as indicated in the EVTYPE variable) are most harmful with respect to population health?
 
@@ -70,7 +68,6 @@ max(total)
 
 From the figure, it was found that Tornado has caused the most number of injuries and fatalities (96,980 fatalities and injuries), significantly more than any other type of events.
 
-### Impact on Economy
 ```{r}
 total <- sort(
   tapply(storm_data$DAMAGE, storm_data$EVTYPE, sum),
